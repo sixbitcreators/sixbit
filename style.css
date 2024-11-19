@@ -492,6 +492,68 @@ p {
 }
 /*End contact Section */
 
+.carousel {
+    position: relative;
+    width: 300px; /* Ubah sesuai kebutuhan */
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%; /* Setiap item mengambil lebar penuh dari carousel */
+    box-sizing: border-box;
+    display: none; /* Sembunyikan semua gambar secara default */
+}
+
+.carousel-item img {
+    width: 80%; /* Ukuran gambar kecil */
+    margin: 0 auto; /* Center gambar */
+    display: block;
+}
+
+input[type="radio"] {
+    display: none; /* Sembunyikan input radio */
+}
+
+/* Tampilkan gambar aktif */
+#slide1:checked ~ .carousel-images .carousel-item:nth-child(1),
+#slide2:checked ~ .carousel-images .carousel-item:nth-child(2),
+#slide3:checked ~ .carousel-images .carousel-item:nth-child(3),
+#slide4:checked ~ .carousel-images .carousel-item:nth-child(4),
+#slide5:checked ~ .carousel-images .carousel-item:nth-child(5) {
+    display: block; /* Tampilkan gambar yang sesuai */
+}
+
+/* Navigasi */
+.carousel-navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.nav-button {
+    cursor: pointer;
+    font-size: 24px;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    transition: background 0.3s;
+}
+
+.nav-button:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+
+
 /* Footer */
 #footer {
 	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
